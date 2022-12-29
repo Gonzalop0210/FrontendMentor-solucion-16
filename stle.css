@@ -74,9 +74,43 @@ body {
     border: 1px solid hsl(246, 25%, 77%);
     border-radius: 5px;
     font-size: .9em;
+    position: relative;
 }
 
-.input:focus {
+.input__name, .input__lastName, .input__email, .input__password {
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 20px;
+}
+
+.text__error {
+    color: hsl(0, 100%, 74%);
+    font-size: .8em;
+    margin-top: -12px;
+    align-self: flex-end;
+    margin-right: 8%;
+}
+
+/*---------------------------*/
+.mostrar__icono__error {
+    background-image: none;
+}
+
+.text__error__ocultar {
+    display: none;
+}
+
+.border__error {
+    border: 2px solid hsl(0, 100%, 74%);
+}
+
+.error__correo::placeholder {
+    color: hsl(0, 100%, 74%);
+}
+/*---------------------------*/
+
+.input__name:focus, .input__lastName:focus, .input__email:focus, .input__password:focus {
     outline: 1px solid hsl(0, 100%, 74%);
     border: 1px solid hsl(0, 100%, 74%);
 }
@@ -92,6 +126,12 @@ body {
     font-size: .95em;
     letter-spacing: 1px;
     box-shadow: inset 0px -9px 0px -6px hsl(154, 55%, 45%);
+    transition: .3s;
+}
+
+.input__button:hover {
+    background-color: hsl(154, 55%, 45%);
+    cursor: pointer;
 }
 
 .footer {
@@ -106,4 +146,40 @@ body {
     color: hsl(0, 100%, 74%);
     font-size: 1em;
     font-weight: 700;
+}
+
+@media only screen and (min-width:796px) {
+    body {
+        height: 100vh;
+        align-items: center;
+    }
+
+    .container__main {
+        max-width: 500px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container__main {
+        display: flex;
+        align-items: center;
+        max-width: 1000px;
+        gap: 20px;
+    }
+
+    .container__section__content {
+        text-align: start;
+    }
+
+    .container__section {
+        width: 50%;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+
+    .paragraph {
+        font-size: 1em;
+    }
 }
